@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Sma Yapis</title>
+    <!-- Menghubungkan ke file CSS terpisah -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ANIMASI LOADING / SPLASH SCREEN -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="logo.png" alt="Logo Loading" class="loading-logo-img">
+            </div>
+            <h2>please wait.....</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. NAVBAR SIMPLE DENGAN LOGO ANIMASI -->
+    <header>
+        <div class="container nav-content">
+            <div class="logo-container">
+                <div class="animated-logo">🏛️</div>
+                <h1>History Sma Yapis</h1>
+            </div>
+            <nav>
+                <a href="#beranda">Beranda</a>
+                <a href="#galeri">Galeri</a>
+                <a href="#tambah-foto">Upload</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. HERO / BERANDA -->
+    <section id="beranda" class="hero">
+        <span class="badge">Arsip Digital & Kenangan</span>
+        
+        <!-- LOGO TENGAH MURNI BERDETAK -->
+        <div class="hero-logo-container">
+            <div class="heartbeat-logo">
+                <img src="logo.png" alt="Logo Sekolah" class="custom-logo-img">
+            </div>
+        </div>
+
+        <h2>Cerita / History Perjalanan SMA Yapis</h2>
+        <p>
+            Website sederhana ini digunakan untuk menyimpan dokumenter sekolah yang aman di Google Drive.
+        </p>
+
+        <!-- TOMBOL PINTASAN CEPAT -->
+        <div class="hero-buttons">
+            <a href="#galeri" class="btn-primary">📁 Buka Album Galeri</a>
+            <a href="#tambah-foto" class="btn-secondary">➕ Upload Foto</a>
+            <a href="https://drive.google.com" target="_blank" class="btn-secondary">🔗 Google Drive</a>
+        </div>
+    </section>
+
+    <!-- 3. BAGIAN GALERI GOOGLE DRIVE -->
+    <section id="galeri" class="container gallery-section">
+        <div class="card">
+            <h3>📁 Album Foto Masa-masa SMA Yapis</h3>
+            <p>Isi folder Google Drive arsip sekolah Anda ditampilkan di bawah sini:</p>
+
+            <!-- Kotak Embed Google Drive -->
+            <div class="iframe-box">
+                <iframe src="https://drive.google.com/embeddedfolderview?id=18dBWAtwnzXVtc5ouybMQGmowhAPHHrVi#grid"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION FORM UPLOAD / KIRIM FOTO KENANGAN -->
+    <section class="container gallery-section" id="tambah-foto">
+        <div class="card" style="text-align: center;">
+            <h3>Punya Foto Jadul SMA Yapis? Yuk Bagikan!</h3>
+            <p style="margin-bottom: 20px; color: #64748b; font-size: 0.9rem;">Punya dokumentasi atau foto kenangan masa sekolah? Bantu kami merawat sejarah dengan mengunggahnya melalui formulir khusus.</p>
+            
+            <!-- Tombol yang langsung mengarah ke Google Form Abang -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScM_VtLXyIoLm_bi6E6rJ7myp9PP9_w5RR7MftzGMEPW3cSHw/viewform?usp=dialog" target="_blank" class="btn-primary" style="padding: 12px 25px; font-size: 0.95rem;">
+                📤 Buka Formulir Upload Foto
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; Sejarah Sekolah. Aman dan free dari Google.</p>
+    </footer>
+
+    <!-- Menghubungkan ke file JavaScript terpisah -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+
+/* === BACKGROUND FULL SATU HALAMAN === */
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    margin: 0;
+    padding: 0;
+    
+    background-image: url('logo.png'); /* Sesuaikan nama file */
+    
+    /* Ganti jadi 'contain' atau ukuran pasti biar gambarnya tidak terlalu nge-zoom */
+    background-size: 100px; /* Abang bisa ubah angka ini (misal 300px atau 400px) sesuai selera */
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: transparent; 
+}
+
+
+
+
+/* Styling Murni (Aman & Tidak Tergantung Internet/CDN) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+    
+
+/* === NAVBAR DENGAN EFEK KACA BURAM (GLASSMORPHISM) === */
+header {
+    background-color: rgba(255, 255, 255, 0.3); /* Warna putih transparan */
+    backdrop-filter: blur(1px);                 /* Efek blur kaca di belakangnya */
+    -webkit-backdrop-filter: blur(12px);         /* Dukungan untuk HP/browser lain */
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-content {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Bagian Logo & Judul Navbar */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-content h1 {
+    font-size: 1.1rem;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+/* === ANIMASI LOGO NAVBAR (MELAYANG) === */
+.animated-logo {
+    font-size: 1.5rem;
+    display: inline-block;
+    animation: floatAndPulse 3s ease-in-out infinite;
+}
+
+@keyframes floatAndPulse {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(6deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+/* ================================ */
+
+.nav-content nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.nav-content nav a:hover {
+    color: #2563eb;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 20px 30px 20px;
+}
+
+.badge {
+    background-color: #dbeafe;
+    color: #1e40af;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* === ANIMASI LOGO TENGAH (DETAK JANTUNG / HEARTBEAT) DIPERBESAR === */
+/* === ANIMASI LOGO TENGAH (TANPA BULATAN, MURNI FOTO BERDETAK) === */
+.hero-logo-container {
+    margin: 20px 0 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.heartbeat-logo {
+    width: 120px; /* Ukuran lebar logo bisa disesuaikan di sini */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+/* Mengatur foto logo agar tampil utuh tanpa terpotong bentuk lingkaran */
+.custom-logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(37, 99, 235, 0.25)); /* Memberikan efek bayangan lembut biar tidak kaku */
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.18);
+    }
+    30% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.1);
+    }
+    60% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* ==================================================== */
+
+/* === JUDUL UTAMA DENGAN WARNA GRADASI ESTETIK === */
+.hero h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    
+    /* Efek Gradasi Warna Teks */
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* <- Tambahan baris ini biar peringatannya hilang */
+}
+
+.hero p {
+    color: #64748b;
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gallery-section {
+    padding: 20px 20px 60px 20px;
+}
+
+/* === EFEK INTERAKTIF KARTU GALERI === */
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    
+    /* Tambahan efek transisi halus & pergerakan */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek saat kartu disentuh atau di-hover */
+.card:hover {
+    transform: translateY(-4px); /* Kotak sedikit terangkat ke atas */
+    box-shadow: 0 12px 25px -5px rgba(37, 99, 235, 0.12); /* Bayangan jadi lebih tebal dan elegan */
+    border-color: #93c5fd; /* Garis pinggir berubah jadi biru muda lembut */
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.iframe-box {
+    width: 100%;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #cbd5e1;
+    background: #f1f5f9;
+}
+
+.iframe-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.8rem;
+}
+/* === TOMBOL PINTASAN CEPAT (QUICK ACTIONS) === */
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap; /* Supaya aman & turun ke bawah otomatis jika layar HP sempit */
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Tombol Utama (Warna Biru Solid) */
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+/* Tombol Sekunder (Warna Putih dengan Garis Pinggir) */
+.btn-secondary {
+    background-color: #ffffff;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+    background-color: #f8fafc;
+    color: #1e293b;
+    border-color: #94a3b8;
+    transform: translateY(-2px);
+}
+
+/* === ANIMASI MUNCUL HALUS (FADE-IN) SAAT HALAMAN DIBUKA === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero, .gallery-section {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* === ANIMASI LOADING SCREEN === */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-logo {
+    font-size: 3.5rem;
+    animation: heartbeat 1.2s ease-in-out infinite;
+    margin-bottom: 15px;
+}
+
+.loading-content h2 {
+    font-size: 1.1rem;
+    color: #1e3a8a;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Kotak garis loading */
+.loading-bar {
+    width: 150px;
+    height: 6px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Efek bar berjalan */
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background-color: #2563eb;
+    border-radius: 10px;
+    animation: progressAnimation 1.2s ease-in-out forwards;
+}
+
+@keyframes progressAnimation {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+/* Kelas tambahan untuk menghilangkan layar loading saat selesai */
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+.loading-logo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.loading-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+/* === BACKGROUND LOADING SCREEN DENGAN FOTO === */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Masukkan nama file foto background Abang di sini */
+    background-image: url('foto.jpg'); 
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Tambahan lapisan transparan biar teks dan logo tetap jelas dibaca */
+#loading-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Ubah angka 0.9 ini (0 - 1) kalau mau lebih transparan atau lebih pekat */
+    z-index: 1;
+}
+
+/* Pastikan konten teks/logo berada di atas lapisan transparan */
+.loading-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+/* === BACKGROUND UTAMA HALAMAN (DIPERECIL & PAS DI TENGAH) === */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    margin: 0;
+    padding: 0;
+    
+    /* Pastikan nama file gambarnya benar (misal 'logo.png' atau 'foto.jpg') */
+    background-image: url('logo.png') !important; 
+    
+    /* UKURAN FOTO: Ganti angka '250px' ini kalau mau lebih kecil atau lebih besar */
+    background-size: 250px !important; 
+    
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-color: #ffffff !important; 
+}
+
+/* Lapisan transparan tipis di atas background body */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Warna latar transparan (0.85 artinya agak putih bersih biar teks biru tetap terbaca jelas) */
+    background-color: rgba(255, 255, 255, 0.5) !important; 
+    
+    z-index: -1;
+}
