@@ -408,7 +408,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Ubah angka 0.9 ini (0 - 1) kalau mau lebih transparan atau lebih pekat */
+    background-color: rgba(0, 0, 0, 0.2); /* Ubah angka 0.9 ini (0 - 1) kalau mau lebih transparan atau lebih pekat */
     z-index: 1;
 }
 
