@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History Sma Yapis</title>
-    <!-- Menghubungkan ke file CSS terpisah -->
+    <title>History SMA Yapis - Arsip Digital & Kenangan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- 1. SCROLL PROGRESS BAR DI ATAS -->
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
 
     <!-- ANIMASI LOADING / SPLASH SCREEN -->
     <div id="loading-screen">
@@ -15,19 +17,19 @@
             <div class="loading-logo">
                 <img src="logo.png" alt="Logo Loading" class="loading-logo-img">
             </div>
-            <h2>please wait.....</h2>
+            <h2>Memuat Arsip Kenangan...</h2>
             <div class="loading-bar">
                 <div class="loading-progress"></div>
             </div>
         </div>
     </div>
 
-    <!-- 1. NAVBAR SIMPLE DENGAN LOGO ANIMASI -->
+    <!-- NAVBAR ESTETIK (GLASSMORPHISM) -->
     <header>
         <div class="container nav-content">
             <div class="logo-container">
                 <div class="animated-logo">🏛️</div>
-                <h1>History Sma Yapis</h1>
+                <h1>History SMA Yapis</h1>
             </div>
             <nav>
                 <a href="#beranda">Beranda</a>
@@ -37,36 +39,42 @@
         </div>
     </header>
 
-    <!-- 2. HERO / BERANDA -->
+    <!-- HERO SECTION -->
     <section id="beranda" class="hero">
-        <span class="badge">Arsip Digital & Kenangan</span>
+        <!-- 4. STATUS LIVE BADGE -->
+        <div class="status-badge-container">
+            <span class="badge">✨ Arsip Digital & Kenangan Sekolah</span>
+            <span class="live-status"><span class="pulse-dot"></span> Sistem Arsip Online</span>
+        </div>
         
-        <!-- LOGO TENGAH MURNI BERDETAK -->
+        <!-- LOGO TENGAH BERDETAK -->
         <div class="hero-logo-container">
             <div class="heartbeat-logo">
                 <img src="logo.png" alt="Logo Sekolah" class="custom-logo-img">
             </div>
         </div>
 
-        <h2>Cerita / History Perjalanan SMA Yapis</h2>
+        <!-- 2. UCAPAN DINAMIS BERDASARKAN WAKTU -->
+        <h2 id="dynamicGreeting">Jejak Langkah & Cerita Perjalanan SMA Yapis</h2>
         <p>
-            Website sederhana ini digunakan untuk menyimpan dokumenter sekolah yang aman di Google Drive.
+            Ruang digital khusus untuk merawat, menyimpan, dan mengenang kembali memori indah masa-masa sekolah yang aman tersimpan di Google Drive.
         </p>
 
-        <!-- TOMBOL PINTASAN CEPAT (DIPAKSA BERJEJER KIRI KE KANAN) -->
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="#galeri" class="btn-primary" style="display: inline-block; margin: 5px;">📁 Buka Album Galeri</a>
-            <a href="#tambah-foto" class="btn-secondary" style="display: inline-block; margin: 5px;">➕ Upload Foto</a>
-            <a href="https://drive.google.com" target="_blank" class="btn-secondary" style="display: inline-block; margin: 5px;">🔗 Google Drive</a>
+        <!-- TOMBOL PINTASAN & 8. SHARE LINK -->
+        <div class="hero-buttons">
+            <a href="#galeri" class="btn-primary">📁 Buka Album Galeri</a>
+            <a href="#tambah-foto" class="btn-secondary">➕ Upload Foto Kenangan</a>
+            <button id="shareBtn" class="btn-secondary">🔗 Bagikan Website</button>
         </div>
     </section>
 
-    <!-- 3. BAGIAN GALERI GOOGLE DRIVE -->
+    <!-- BAGIAN GALERI GOOGLE DRIVE -->
     <section id="galeri" class="container gallery-section">
-        <div class="card">
-            <h3>📁 Album Foto Masa-masa SMA Yapis</h3>
-            <p>Isi folder Google Drive arsip sekolah Anda ditampilkan di bawah sini:</p>
-
+        <div class="card spotlight-card">
+            <div class="card-header">
+                <h3>📁 Album Kenangan Masa SMA</h3>
+                <p>Dokumentasi foto dan video arsip sekolah yang tersinkronisasi langsung dari penyimpanan awan:</p>
+            </div>
             <!-- Kotak Embed Google Drive -->
             <div class="iframe-box">
                 <iframe src="https://drive.google.com/embeddedfolderview?id=18dBWAtwnzXVtc5ouybMQGmowhAPHHrVi#grid"></iframe>
@@ -74,25 +82,29 @@
         </div>
     </section>
 
-    <!-- 4. SECTION FORM UPLOAD / KIRIM FOTO KENANGAN -->
+    <!-- SECTION FORM UPLOAD -->
     <section class="container gallery-section" id="tambah-foto">
-        <div class="card" style="text-align: center;">
-            <h3>Punya Foto Jadul SMA Yapis? Yuk Bagikan!</h3>
-            <p style="margin-bottom: 20px; color: #64748b; font-size: 0.9rem;">Punya dokumentasi atau foto kenangan masa sekolah? Bantu kami merawat sejarah dengan mengunggahnya melalui formulir khusus.</p>
-            
-            <!-- Tombol yang langsung mengarah ke Google Form Abang -->
-            <a href="https://forms.gle/sPDh2imf7B1mCxyr7" target="_blank" class="btn-primary" style="padding: 12px 25px; font-size: 0.95rem; display: inline-block;">
+        <div class="card upload-card spotlight-card">
+            <h3>Punya Foto Jadul atau Dokumentasi Menarik?</h3>
+            <p>Yuk, bantu kami merawat sejarah dan memori sekolah dengan mengunggah foto kenanganmu melalui formulir di bawah ini!</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScM_VtLXyIoLm_bi6E6rJ7myp9PP9_w5RR7MftzGMEPW3cSHw/viewform?usp=dialog" target="_blank" class="btn-primary">
                 📤 Buka Formulir Upload Foto
             </a>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER & 3. JAM DIGITAL -->
     <footer>
-        <p>&copy; Sejarah Sekolah. Aman dan free dari Google.</p>
+        <p>&copy; 2026 Sejarah SMA Yapis. Aman, Nyaman, & Bebas Diakses.</p>
+        <p class="footer-clock">🕒 Waktu Lokal: <span id="liveClock">00:00:00</span> WIT</p>
     </footer>
 
-    <!-- Menghubungkan ke file JavaScript terpisah -->
+    <!-- 5. TOMBOL KEMBALI KE ATAS -->
+    <button id="backToTopBtn" class="back-to-top" title="Kembali ke atas">↑</button>
+
+    <!-- 7. TOAST NOTIFICATION POPUP -->
+    <div id="toastNotification" class="toast">Tautan berhasil disalin ke clipboard! 🎉</div>
+
     <script src="script.js"></script>
 </body>
 </html>
